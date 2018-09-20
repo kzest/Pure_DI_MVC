@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B6DF8D05-A6DB-41CA-A882-573C118E686F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pure_DI</RootNamespace>
+    <AssemblyName>Pure_DI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ObjectGraph.cs" />
+    <Compile Include="PureDI.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CodeAssignment1.Global\CodeAssignment1.Global.csproj">
+      <Project>{9be2a59c-e44b-4fa7-86aa-2b706e830776}</Project>
+      <Name>CodeAssignment1.Global</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CodeAssignment1.Repository\CodeAssignment1.Repository.csproj">
+      <Project>{2F9FD844-E922-4752-8068-4F9DD0F38FC3}</Project>
+      <Name>CodeAssignment1.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CodeAssignment1.ServiceContract\CodeAssignment1.ServiceContract.csproj">
+      <Project>{82EDCC60-D611-4002-978A-B2D8AD601298}</Project>
+      <Name>CodeAssignment1.ServiceContract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CodeAssignment1.Services\CodeAssignment1.Service.csproj">
+      <Project>{26B3D85E-259D-401A-9070-7CE558571BEA}</Project>
+      <Name>CodeAssignment1.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmployeeDomainBusinessContracts\EmployeeDomainBusinessContracts.csproj">
+      <Project>{2B1C945C-A8C2-4F15-95AB-358F6F3735F8}</Project>
+      <Name>EmployeeDomainBusinessContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmployeeDomainService\EmployeeDomainBusiness.csproj">
+      <Project>{A6B0C717-5629-4807-A5F8-2B7DC4011612}</Project>
+      <Name>EmployeeDomainBusiness</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
